@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -13,15 +14,34 @@ app.use(cors({
 
 app.use(express.json());
 
-// Create users directory if it doesn't exist
-const USERS_DIR = path.join(__dirname, 'users');
-if (!fs.existsSync(USERS_DIR)) {
-  fs.mkdirSync(USERS_DIR, { recursive: true });
-}
+// MongoDB Connection
+const MONGO_URI = 'mongodb+srv://edhb15:<db_password>@learningappcluster.twkwzmd.mongodb.net/?retryWrites=true&w=majority&appName=Learningappcluster'; // Replace <db_password> with your actual password
 
-function getUserFile(username) {
-  return path.join(USERS_DIR, `${username}.json`);
-}
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('MongoDB connected successfully'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+// Define User Schema
+const userSchema = new mongoose.Schema({
+  username: { type: String, required: true, unique: true },
+  password: { type: String, required: true }, // In a real app, hash this password
+  language: { type: String, required: true },
+  progress: { type: Number, default: 0 },
+  gems: { type: Number, default: 0 }
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Remove local users directory (no longer needed)
+// const USERS_DIR = path.join(__dirname, 'users');
+// if (!fs.existsSync(USERS_DIR)) {
+//   fs.mkdirSync(USERS_DIR, { recursive: true });
+// }
+
+// Remove getUserFile (no longer needed)
+// function getUserFile(username) {
+//   return path.join(USERS_DIR, `${username}.json`);
+// }
 
 // Add a health check endpoint for Render
 app.get('/health', (req, res) => {
@@ -29,27 +49,29 @@ app.get('/health', (req, res) => {
 });
 
 // Sign up
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
   try {
     const { username, password, language } = req.body;
     if (!username || !password || !language) {
       return res.status(400).json({ error: 'Username, password, and language required.' });
     }
-    const userFile = getUserFile(username);
-    if (fs.existsSync(userFile)) {
+
+    const existingUser = await User.findOne({ username });
+    if (existingUser) {
       return res.status(409).json({ error: 'User already exists.' });
     }
-    // Initialize new user with default values
-    const userData = {
+
+    const newUser = new User({
       username,
-      password,
+      password, // In a real app, hash this password (e.g., with bcrypt)
       language,
       progress: 0,
       gems: 0
-    };
-    fs.writeFileSync(userFile, JSON.stringify(userData, null, 2));
+    });
+    await newUser.save();
+
     // Return user data without password
-    const { password: _, ...userNoPassword } = userData;
+    const { password: _, ...userNoPassword } = newUser.toObject();
     res.json(userNoPassword);
   } catch (error) {
     console.error('Signup error:', error);
@@ -58,37 +80,27 @@ app.post('/signup', (req, res) => {
 });
 
 // Log in
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
   try {
     const { username, password } = req.body;
     if (!username || !password) {
       return res.status(400).json({ error: 'Username and password required.' });
     }
-    const userFile = getUserFile(username);
-    if (!fs.existsSync(userFile)) {
+
+    const user = await User.findOne({ username });
+    if (!user) {
       return res.status(404).json({ error: 'User not found.' });
     }
-    const userData = JSON.parse(fs.readFileSync(userFile, 'utf8'));
-    if (userData.password !== password) {
+    if (user.password !== password) { // In a real app, compare hashed passwords
       return res.status(401).json({ error: 'Incorrect password.' });
     }
-    
-    // Initialize default values if they don't exist
-    if (typeof userData.gems !== 'number') userData.gems = 0;
-    
-    // Save the updated data if any defaults were added
-    fs.writeFileSync(userFile, JSON.stringify(userData, null, 2));
-    
-    // Log the data being sent back
-    console.log('Sending user data:', {
-      username: userData.username,
-      language: userData.language,
-      progress: userData.progress,
-      gems: userData.gems
-    });
-    
-    // Don't send password back to client
-    const { password: _, ...userNoPassword } = userData;
+
+    // Ensure default values are set if not present in DB (e.g., from old data)
+    user.gems = user.gems || 0;
+    user.progress = user.progress || 0;
+
+    // Return user data without password
+    const { password: _, ...userNoPassword } = user.toObject();
     res.json(userNoPassword);
   } catch (error) {
     console.error('Login error:', error);
@@ -97,7 +109,7 @@ app.post('/login', (req, res) => {
 });
 
 // Save progress
-app.post('/save-progress', (req, res) => {
+app.post('/save-progress', async (req, res) => {
   try {
     console.log('Received save-progress request body:', req.body);
     
@@ -114,40 +126,26 @@ app.post('/save-progress', (req, res) => {
       return res.status(400).json({ error: 'Invalid gems value' });
     }
     
-    const userFile = getUserFile(username);
-    if (!fs.existsSync(userFile)) {
+    const user = await User.findOne({ username });
+    if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
-    
-    // Read existing user data
-    const userData = JSON.parse(fs.readFileSync(userFile, 'utf8'));
-    console.log('Current user data:', userData);
-    
-    // Create new user data object with all fields
-    const updatedUserData = {
-      ...userData,  // Keep existing fields like password
-      progress: progress,
-      gems: gems
-    };
-    
-    console.log('Updated user data to save:', updatedUserData);
-    
-    // Save the updated data
-    const updatedData = JSON.stringify(updatedUserData, null, 2);
-    fs.writeFileSync(userFile, updatedData);
-    
-    // Verify the data was saved correctly
-    const savedData = JSON.parse(fs.readFileSync(userFile, 'utf8'));
-    console.log('Verified saved data:', savedData);
+
+    // Update user data
+    user.progress = progress;
+    user.gems = gems;
+    await user.save();
+
+    console.log('Updated user data saved to MongoDB:', user);
     
     // Return success with the saved data
     const responseData = {
       success: true,
       savedData: {
-        username: savedData.username,
-        language: savedData.language,
-        progress: savedData.progress,
-        gems: savedData.gems
+        username: user.username,
+        language: user.language,
+        progress: user.progress,
+        gems: user.gems
       }
     };
     
