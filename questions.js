@@ -109,6 +109,226 @@ const questions = {
         "begränsad mängd"
       ],
       "c": 2
+    },
+    {
+      "q": "ambivalent",
+      "a": [
+        "tydlig",
+        "osäker",
+        "bestämd",
+        "entusiastisk",
+        "neutral"
+      ],
+      "c": 1
+    },
+    {
+      "q": "paradoxal",
+      "a": [
+        "logisk",
+        "motsägelsefull",
+        "enkel",
+        "komplex",
+        "tydlig"
+      ],
+      "c": 1
+    },
+    {
+      "q": "resonemang",
+      "a": [
+        "diskussion",
+        "argumentation",
+        "debatt",
+        "konversation",
+        "dialog"
+      ],
+      "c": 1
+    },
+    {
+      "q": "konsekvent",
+      "a": [
+        "varierande",
+        "följdriktig",
+        "osammanhängande",
+        "sporadisk",
+        "oregelbunden"
+      ],
+      "c": 1
+    },
+    {
+      "q": "implikation",
+      "a": [
+        "konsekvens",
+        "orsak",
+        "lösning",
+        "problem",
+        "möjlighet"
+      ],
+      "c": 0
+    },
+    {
+      "q": "analog",
+      "a": [
+        "digital",
+        "liknande",
+        "olik",
+        "modern",
+        "gammal"
+      ],
+      "c": 1
+    },
+    {
+      "q": "kausalitet",
+      "a": [
+        "slump",
+        "orsakssamband",
+        "effekt",
+        "resultat",
+        "konsekvens"
+      ],
+      "c": 1
+    },
+    {
+      "q": "empirisk",
+      "a": [
+        "teoretisk",
+        "erfarenhetsbaserad",
+        "hypotetisk",
+        "spekulativ",
+        "abstrakt"
+      ],
+      "c": 1
+    },
+    {
+      "q": "paradigm",
+      "a": [
+        "exempel",
+        "mönster",
+        "modell",
+        "regel",
+        "princip"
+      ],
+      "c": 2
+    },
+    {
+      "q": "syntes",
+      "a": [
+        "analys",
+        "sammansättning",
+        "upplösning",
+        "sönderdelning",
+        "separering"
+      ],
+      "c": 1
+    },
+    {
+      "q": "heuristisk",
+      "a": [
+        "exakt",
+        "upptäckande",
+        "systematisk",
+        "metodisk",
+        "strukturerad"
+      ],
+      "c": 1
+    },
+    {
+      "q": "metodologi",
+      "a": [
+        "resultat",
+        "läromedel",
+        "lärometod",
+        "utfall",
+        "slutsats"
+      ],
+      "c": 2
+    },
+    {
+      "q": "validitet",
+      "a": [
+        "ogiltighet",
+        "giltighet",
+        "felaktighet",
+        "osäkerhet",
+        "tvivel"
+      ],
+      "c": 1
+    },
+    {
+      "q": "reliabilitet",
+      "a": [
+        "otillförlitlighet",
+        "tillförlitlighet",
+        "osäkerhet",
+        "variation",
+        "instabilitet"
+      ],
+      "c": 1
+    },
+    {
+      "q": "hypotes",
+      "a": [
+        "fakta",
+        "antagande",
+        "bevis",
+        "slutsats",
+        "resultat"
+      ],
+      "c": 1
+    },
+    {
+      "q": "variabel",
+      "a": [
+        "konstant",
+        "föränderlig",
+        "fast",
+        "stabil",
+        "oföränderlig"
+      ],
+      "c": 1
+    },
+    {
+      "q": "korrelation",
+      "a": [
+        "orsak",
+        "samband",
+        "effekt",
+        "resultat",
+        "konsekvens"
+      ],
+      "c": 1
+    },
+    {
+      "q": "anomali",
+      "a": [
+        "normalitet",
+        "avvikelse",
+        "regel",
+        "mönster",
+        "standard"
+      ],
+      "c": 1
+    },
+    {
+      "q": "paradigmatisk",
+      "a": [
+        "avvikande",
+        "mönsterbildande",
+        "oregelbunden",
+        "varierande",
+        "osystematisk"
+      ],
+      "c": 1
+    },
+    {
+      "q": "epistemologi",
+      "a": [
+        "metodik",
+        "kunskapsteori",
+        "etik",
+        "logik",
+        "filosofi"
+      ],
+      "c": 1
     }
   ],
   "LÄS": [
@@ -321,6 +541,206 @@ const questions = {
         "Det är onödigt"
       ],
       "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nKvantfysik har revolutionerat vår förståelse av materien. På atomnivå beter sig partiklar annorlunda än i den makroskopiska världen. Detta har lett till både praktiska tillämpningar och filosofiska frågor om verklighetens natur.\n\nVad är textens huvudtema?",
+      "a": [
+        "Kvantfysikens grundprinciper",
+        "Atomernas beteende",
+        "Kvantfysikens påverkan på vår verklighetsuppfattning",
+        "Praktiska tillämpningar av kvantfysik"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nBiodiversitet är avgörande för ekosystemens funktion och mänsklighetens överlevnad. Varje art spelar en unik roll i naturens nätverk. När arter försvinner kan detta leda till oväntade konsekvenser för hela ekosystemet.\n\nVad betonar texten som viktigt med biodiversitet?",
+      "a": [
+        "Ekonomiskt värde",
+        "Estetiskt värde",
+        "Ekologiskt sammanhang och överlevnad",
+        "Turistattraktion"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nBlockchain-tekniken har potential att förändra hur vi hanterar transaktioner och data. Genom sin decentraliserade natur och säkerhetsmekanismer erbjuder den nya möjligheter för transparens och tillit i digitala system.\n\nVad beskriver texten som blockchains huvudsakliga fördel?",
+      "a": [
+        "Snabbhet",
+        "Kostnadseffektivitet",
+        "Decentralisering och säkerhet",
+        "Användarvänlighet"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nNeuroplasticitet är hjärnans förmåga att omorganisera sig genom att bilda nya nervbanor. Detta är grundläggande för lärande och återhämtning efter skador. Genom träning och erfarenhet kan vi aktivt påverka denna process.\n\nVad är textens huvudbudskap?",
+      "a": [
+        "Hjärnans struktur",
+        "Nervbanors betydelse",
+        "Hjärnans anpassningsförmåga och träningsmöjligheter",
+        "Skador på hjärnan"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nKlimatsmarta städer fokuserar på hållbar utveckling genom integrerade lösningar för transport, energi och byggande. Genom att kombinera teknik och naturbaserade lösningar kan städerna minska sin klimatpåverkan och öka livskvaliteten.\n\nVad beskriver texten som nyckeln till klimatsmarta städer?",
+      "a": [
+        "Tekniska lösningar",
+        "Naturbaserade lösningar",
+        "Integrerade och kombinerade lösningar",
+        "Transportlösningar"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nKvantdatorer representerar nästa steg i beräkningskraft. Genom att utnyttja kvantmekanikens principer kan de lösa vissa problem mycket snabbare än klassiska datorer. Detta öppnar för nya möjligheter inom forskning och teknologi.\n\nVad är textens huvudtema?",
+      "a": [
+        "Kvantmekanik",
+        "Beräkningskraft",
+        "Kvantdatorers potential och möjligheter",
+        "Teknologisk utveckling"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nCirkulär ekonomi syftar till att minimera avfall och maximera resursanvändning. Genom att designa produkter för återanvändning och återvinning kan vi skapa mer hållbara produktionssystem.\n\nVad betonar texten som viktigt i cirkulär ekonomi?",
+      "a": [
+        "Kostnadsbesparing",
+        "Produktdesign",
+        "Resurseffektivitet och hållbarhet",
+        "Avfallshantering"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nSyntetisk biologi kombinerar teknik och biologi för att skapa nya biologiska system. Detta kan leda till banbrytande innovationer inom medicin, energi och material. Samtidigt väcker det viktiga etiska frågor.\n\nVad beskriver texten som en konsekvens av syntetisk biologi?",
+      "a": [
+        "Enbart medicinska framsteg",
+        "Enbart etiska utmaningar",
+        "Både innovationer och etiska frågor",
+        "Enbart tekniska framsteg"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nDigitalisering av sjukvården kan förbättra effektivitet och patientsäkerhet. Genom att samla och analysera data kan vården bli mer personanpassad. Detta kräver dock noggrann hantering av känsliga uppgifter.\n\nVad är textens huvudbudskap?",
+      "a": [
+        "Datasäkerhet",
+        "Effektivitet",
+        "Balans mellan fördelar och säkerhet",
+        "Personanpassad vård"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nRymdutforskning har gett oss nya insikter om universum och vår plats i det. Genom att studera andra planeter och stjärnor kan vi bättre förstå jorden och dess utveckling.\n\nVad betonar texten som viktigt med rymdutforskning?",
+      "a": [
+        "Tekniska framsteg",
+        "Kunskap om universum",
+        "Förståelse för jorden och universum",
+        "Utveckling av rymdteknik"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nArtificiell intelligens i konst skapar nya möjligheter för kreativitet. AI kan generera konstverk, komponera musik och skriva texter. Detta väcker frågor om konstnärskap och originalitet.\n\nVad beskriver texten som en konsekvens av AI i konst?",
+      "a": [
+        "Enbart tekniska möjligheter",
+        "Enbart etiska frågor",
+        "Både kreativa möjligheter och konceptuella utmaningar",
+        "Enbart konstnärliga framsteg"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nHållbar modeindustri fokuserar på miljövänlig produktion och etisk konsumtion. Genom att använda återvunnet material och förlänga kläders livslängd kan vi minska branschens miljöpåverkan.\n\nVad är textens huvudtema?",
+      "a": [
+        "Modeindustrin",
+        "Miljöpåverkan",
+        "Hållbarhet i modeindustrin",
+        "Konsumtion"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nUrban odling kan bidra till hållbar livsmedelsförsörjning i städer. Genom att odla mat på tak, i parker och i vertikala trädgårdar kan vi minska transporter och öka självförsörjningen.\n\nVad betonar texten som fördelar med urban odling?",
+      "a": [
+        "Estetiska fördelar",
+        "Ekonomiska fördelar",
+        "Hållbarhet och självförsörjning",
+        "Fritidsvärde"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nDigital demokrati kan öka medborgarnas deltagande i beslutsprocesser. Genom digitala plattformar kan fler komma till tals och påverka samhällsutvecklingen. Detta kräver dock tillgänglighet och digital kompetens.\n\nVad beskriver texten som en utmaning för digital demokrati?",
+      "a": [
+        "Tekniska problem",
+        "Kostnader",
+        "Tillgänglighet och kompetens",
+        "Säkerhet"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nBiodynamiskt jordbruk kombinerar ekologisk odling med kosmiska rytmer. Genom att följa naturens cykler och använda biodynamiska preparat strävar man efter att skapa balans i odlingssystemet.\n\nVad är textens huvudbudskap?",
+      "a": [
+        "Ekologisk odling",
+        "Kosmiska rytmer",
+        "Balans i odlingssystem",
+        "Biodynamiska preparat"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nVirtual reality revolutionerar utbildning genom att skapa immersiva lärupplevelser. Elever kan utforska historiska platser, utföra experiment och träna praktiska färdigheter i en säker miljö.\n\nVad betonar texten som fördelar med VR i utbildning?",
+      "a": [
+        "Tekniska möjligheter",
+        "Kostnadsbesparing",
+        "Interaktiva och säkra lärupplevelser",
+        "Underhållning"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nRegenerativt jordbruk fokuserar på att bygga upp jordens hälsa och biodiversitet. Genom att minimera jordbearbetning och maximera växtdiversitet kan vi skapa mer motståndskraftiga odlingssystem.\n\nVad beskriver texten som nyckeln till regenerativt jordbruk?",
+      "a": [
+        "Kemiska gödselmedel",
+        "Maskinell bearbetning",
+        "Jordhälsa och biodiversitet",
+        "Växtskydd"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nSmart hem-teknik kan optimera energianvändning och öka komforten. Genom att koppla ihop olika system kan hemmet anpassa sig efter invånare och väderlek. Detta kräver dock säker hantering av personuppgifter.\n\nVad är textens huvudtema?",
+      "a": [
+        "Energieffektivitet",
+        "Komfort",
+        "Balans mellan fördelar och säkerhet",
+        "Teknisk integration"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nBiomimikri är design inspirerad av naturens lösningar. Genom att studera hur naturen löser problem kan vi skapa mer hållbara och effektiva produkter och system.\n\nVad betonar texten som viktigt med biomimikri?",
+      "a": [
+        "Estetisk design",
+        "Kostnadsbesparing",
+        "Hållbarhet och effektivitet",
+        "Innovation"
+      ],
+      "c": 2
+    },
+    {
+      "q": "Läs följande text och svara på frågan:\n\nDigital hälsa fokuserar på att använda teknik för att förbättra vård och välbefinnande. Genom att samla och analysera hälsodata kan vi få mer personanpassad vård. Detta kräver dock noggrann hantering av känsliga uppgifter.\n\nVad beskriver texten som en utmaning för digital hälsa?",
+      "a": [
+        "Tekniska problem",
+        "Kostnader",
+        "Datasäkerhet och integritet",
+        "Användarvänlighet"
+      ],
+      "c": 2
     }
   ],
   "MEK": [
@@ -372,6 +792,106 @@ const questions = {
     {
       "q": "Åklagarens besked var oväntat och ledde till spontant jubel hos många Baltimore- bor, som _____ hade väntat sig ännu ett frikännande av våldsamma poliser.",
       "a": ["luttrat", "kaxigt", "prompt","ivrigt"],
+      "c": 2
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: De nya medlemmarna var starkt _____ i föreningens verksamhet.",
+      "a": ["engagerade", "beroende", "sammanhållna", "förankrade"],
+      "c": 0
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Vi behöver _____ för att _____ besluten.",
+      "a": ["kartor – moderera", "fakta – reglera", "data – involvera", "studier – exkludera"],
+      "c": 1
+    },
+    {
+      "q": "Välj det alternativ som passar bäst i meningen: Projektet _____ lokala traditioner och fokuserade på _____ av kulturarvet.",
+      "a": ["odling – bortsåg från – gårdsförsäljning", "restaurering – tog fasta på – återställande", "uthyrning – gav näring åt – arbetstillfällen", "skötsel – fann tröst i – nyskapande"],
+      "c": 1
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Samhället _____ i ständig förändring och nya _____ formas.",
+      "a": ["ter sig – kriterier", "gör sig – valörer", "står sig – nyanser", "rör sig – normer"],
+      "c": 3
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Arbetet med att bevara kulturarvet har varit _____ för framtida generationer.",
+      "a": ["omvittnat", "bristfälligt", "ovärderligt", "framställt"],
+      "c": 2
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Projektet ska _____ och resurser tas _____.",
+      "a": ["utformas – i beslag", "återupptas – i anspråk", "genomdrivas – i retur","avhandlas – i beredskap"],
+      "c": 1
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Visionen _____ i alla delar av verksamheten.",
+      "a": ["besjälade", "frammanade", "ledsagade","förkroppsligade"],
+      "c": 3
+    },
+    {
+      "q": "Välj det alternativ som passar bäst i meningen: Vår _____ påverkas av olika _____ och kan _____ av omgivningen.",
+      "a": ["tidsanda – lager – förvrängs", "världsbild – raster – tolkas", "livsstil – filter – beskrivs","synvinkel – mönster – nyanseras"],
+      "c": 3
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Det _____ behövs en _____ lösning.",
+      "a": ["aktuellt – inaktuell", "aktivt – retroaktiv", "explicit – implicit","ordinärt – extraordinär"],
+      "c": 2
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Teamet agerade _____ i krisen.",
+      "a": ["luttrat", "kaxigt", "prompt","ivrigt"],
+      "c": 2
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Företaget var _____ i sin bransch.",
+      "a": ["ledande", "efterhängsen", "medelmåttig", "undergiven"],
+      "c": 0
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Vi måste _____ för att _____ utmaningarna.",
+      "a": ["analysera – övervinna", "försumma – undvika", "fördröja – hantera", "förbise – möta"],
+      "c": 0
+    },
+    {
+      "q": "Välj det alternativ som passar bäst i meningen: Projektet _____ lokala resurser och fokuserade på _____ av miljön.",
+      "a": ["förbrukade – exploatering", "utnyttjade – skydd", "förstörde – förbättring", "försummade – bevakning"],
+      "c": 1
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Samhället _____ mot nya mål och _____ utvecklas.",
+      "a": ["strävar – kontinuerligt", "vänder – periodiskt", "drar – sporadiskt", "går – oregelbundet"],
+      "c": 0
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Insatsen var _____ för projektets framgång.",
+      "a": ["undergiven", "avgörande", "oviktig", "sekundär"],
+      "c": 1
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Verksamheten ska _____ och resurser _____.",
+      "a": ["utvecklas – allokeras", "förstöras – sprids", "försummas – fördelas", "fördröjas – samlas"],
+      "c": 0
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Visionen _____ i organisationens värderingar.",
+      "a": ["försvann", "spreds", "rotfäste", "försvagades"],
+      "c": 2
+    },
+    {
+      "q": "Välj det alternativ som passar bäst i meningen: Vår _____ påverkas av olika _____ och kan _____ över tid.",
+      "a": ["attityd – faktorer – förändras", "position – element – förstärkas", "status – komponenter – försvagas", "roll – delar – förbättras"],
+      "c": 0
+    },
+    {
+      "q": "Välj det par av ord som passar bäst i meningen: Det _____ krävs en _____ lösning.",
+      "a": ["komplicerade – enkel", "komplexa – sofistikerad", "svåra – grundläggande", "enkla – avancerad"],
+      "c": 1
+    },
+    {
+      "q": "Välj det ord som passar bäst i meningen: Teamet reagerade _____ på förändringarna.",
+      "a": ["långsamt", "negativt", "positivt", "neutralt"],
       "c": 2
     }
   ],
@@ -500,6 +1020,106 @@ const questions = {
       "q": "En rektangel har omkretsen 20 cm och arean 24 cm². Vilka är sidornas längder?",
       "a": ["4 cm och 6 cm", "3 cm och 7 cm", "2 cm och 8 cm", "1 cm och 9 cm"],
       "c": 0
+    },
+    {
+      "q": "Lös ekvationen: 2x + 5 = 13",
+      "a": ["x = 3", "x = 4", "x = 5", "x = 6"],
+      "c": 1
+    },
+    {
+      "q": "Beräkna arean av en cirkel med radien 5 cm.",
+      "a": ["15,7 cm²", "31,4 cm²", "78,5 cm²", "157 cm²"],
+      "c": 2
+    },
+    {
+      "q": "Vad är 25% av 200?",
+      "a": ["25", "50", "75", "100"],
+      "c": 1
+    },
+    {
+      "q": "Lös ekvationen: x² + 4x - 5 = 0",
+      "a": ["x = -5 eller x = 1", "x = -4 eller x = 1", "x = -3 eller x = 2", "x = -2 eller x = 3"],
+      "c": 0
+    },
+    {
+      "q": "Beräkna volymen av en kub med sidan 4 cm.",
+      "a": ["16 cm³", "32 cm³", "48 cm³", "64 cm³"],
+      "c": 3
+    },
+    {
+      "q": "Vad är medelvärdet av talen 12, 15, 18, 21?",
+      "a": ["15", "16", "16,5", "17"],
+      "c": 2
+    },
+    {
+      "q": "Lös ekvationen: 3x - 2 = 4x + 1",
+      "a": ["x = -3", "x = -2", "x = -1", "x = 0"],
+      "c": 0
+    },
+    {
+      "q": "Beräkna omkretsen av en rektangel med sidorna 6 cm och 8 cm.",
+      "a": ["14 cm", "24 cm", "28 cm", "48 cm"],
+      "c": 2
+    },
+    {
+      "q": "Vad är 3/4 av 120?",
+      "a": ["60", "80", "90", "100"],
+      "c": 2
+    },
+    {
+      "q": "Lös ekvationen: 2(x + 3) = 10",
+      "a": ["x = 1", "x = 2", "x = 3", "x = 4"],
+      "c": 1
+    },
+    {
+      "q": "Beräkna arean av en triangel med basen 6 cm och höjden 8 cm.",
+      "a": ["12 cm²", "24 cm²", "36 cm²", "48 cm²"],
+      "c": 1
+    },
+    {
+      "q": "Vad är 150% av 80?",
+      "a": ["100", "120", "130", "150"],
+      "c": 1
+    },
+    {
+      "q": "Lös ekvationen: x² - 9 = 0",
+      "a": ["x = -3 eller x = 3", "x = -2 eller x = 2", "x = -1 eller x = 1", "x = 0"],
+      "c": 0
+    },
+    {
+      "q": "Beräkna volymen av en cylinder med radien 3 cm och höjden 4 cm.",
+      "a": ["28,3 cm³", "37,7 cm³", "113,1 cm³", "150,8 cm³"],
+      "c": 2
+    },
+    {
+      "q": "Vad är medianen av talen 5, 7, 9, 11, 13?",
+      "a": ["7", "9", "11", "13"],
+      "c": 1
+    },
+    {
+      "q": "Lös ekvationen: 4x + 3 = 2x + 9",
+      "a": ["x = 2", "x = 3", "x = 4", "x = 5"],
+      "c": 1
+    },
+    {
+      "q": "Beräkna arean av en parallellogram med basen 5 cm och höjden 7 cm.",
+      "a": ["17,5 cm²", "25 cm²", "35 cm²", "42 cm²"],
+      "c": 2
+    },
+    {
+      "q": "Vad är 2/3 av 150?",
+      "a": ["50", "75", "100", "125"],
+      "c": 2
+    },
+    {
+      "q": "Lös ekvationen: 5x - 2 = 3x + 4",
+      "a": ["x = 1", "x = 2", "x = 3", "x = 4"],
+      "c": 2
+    },
+    {
+      "q": "Beräkna omkretsen av en cirkel med diametern 10 cm.",
+      "a": ["15,7 cm", "31,4 cm", "47,1 cm", "62,8 cm"],
+      "c": 1
     }
   ],
   "ELF": [
