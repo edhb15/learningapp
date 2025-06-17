@@ -6,16 +6,16 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// Enable CORS for all origins during development
+// Enable CORS with specific origin
 app.use(cors({
-  origin: '*', // We'll update this with your GitHub Pages URL once deployed
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000', // Update this with your frontend URL
   credentials: true
 }));
 
 app.use(express.json());
 
-// MongoDB Connection
-const MONGO_URI = 'mongodb+srv://edhb15:<db_password>@learningappcluster.twkwzmd.mongodb.net/?retryWrites=true&w=majority&appName=Learningappcluster'; // Replace <db_password> with your actual password
+// MongoDB Connection using environment variable
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/learningapp';
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB connected successfully'))
@@ -24,7 +24,6 @@ mongoose.connect(MONGO_URI)
 // Define User Schema
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true }, // In a real app, hash this password
   language: { type: String, required: true },
   progress: { type: Number, default: 0 },
   gems: { type: Number, default: 0 }
@@ -51,9 +50,9 @@ app.get('/health', (req, res) => {
 // Sign up
 app.post('/signup', async (req, res) => {
   try {
-    const { username, password, language } = req.body;
-    if (!username || !password || !language) {
-      return res.status(400).json({ error: 'Username, password, and language required.' });
+    const { username, language } = req.body;
+    if (!username || !language) {
+      return res.status(400).json({ error: 'Username and language required.' });
     }
 
     const existingUser = await User.findOne({ username });
@@ -63,16 +62,12 @@ app.post('/signup', async (req, res) => {
 
     const newUser = new User({
       username,
-      password, // In a real app, hash this password (e.g., with bcrypt)
       language,
       progress: 0,
       gems: 0
     });
     await newUser.save();
-
-    // Return user data without password
-    const { password: _, ...userNoPassword } = newUser.toObject();
-    res.json(userNoPassword);
+    res.status(201).json({ message: 'User created successfully', user: newUser });
   } catch (error) {
     console.error('Signup error:', error);
     res.status(500).json({ error: 'Internal server error during signup' });
@@ -82,26 +77,25 @@ app.post('/signup', async (req, res) => {
 // Log in
 app.post('/login', async (req, res) => {
   try {
-    const { username, password } = req.body;
-    if (!username || !password) {
-      return res.status(400).json({ error: 'Username and password required.' });
+    const { username } = req.body;
+    if (!username) {
+      return res.status(400).json({ error: 'Username required.' });
     }
 
     const user = await User.findOne({ username });
     if (!user) {
       return res.status(404).json({ error: 'User not found.' });
     }
-    if (user.password !== password) { // In a real app, compare hashed passwords
-      return res.status(401).json({ error: 'Incorrect password.' });
-    }
-
     // Ensure default values are set if not present in DB (e.g., from old data)
     user.gems = user.gems || 0;
     user.progress = user.progress || 0;
 
-    // Return user data without password
-    const { password: _, ...userNoPassword } = user.toObject();
-    res.json(userNoPassword);
+    res.json({
+      username: user.username,
+      language: user.language,
+      progress: user.progress,
+      gems: user.gems
+    });
   } catch (error) {
     console.error('Login error:', error);
     res.status(500).json({ error: 'Internal server error during login' });
